@@ -10,6 +10,11 @@ public class ApplicationControllerWithAuth {
 
     @GetMapping("/getResponse")
     public String getResponse() {
-        return "spring Basic security with authorization example";
+        return "spring Basic security implementation :: API is accessible by user with Admin role";
+    }
+
+    @GetMapping("/getUser")
+    public String getUser() {
+        return "spring Basic security implementation :: API is accessible by user with any role";
     }
 }
