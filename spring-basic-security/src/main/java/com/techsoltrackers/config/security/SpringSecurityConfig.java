@@ -15,10 +15,19 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
         auth.inMemoryAuthentication().withUser("guest").password("Pwd1").roles("ADMIN");
     }
 
+    //Security for all url
+    /*
      @Override protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable();
         http.authorizeRequests().anyRequest().fullyAuthenticated().and().httpBasic();
-     }
+     }*/
+
+    //Security for matching url
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.csrf().disable();
+        http.authorizeRequests().antMatchers("/rest/api/**").fullyAuthenticated().and().httpBasic();
+    }
 
     @Bean
     public static NoOpPasswordEncoder passwordEncoder() {

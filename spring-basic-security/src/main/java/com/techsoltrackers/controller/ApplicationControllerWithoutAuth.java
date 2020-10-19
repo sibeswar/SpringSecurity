@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/rest/api")
+@RequestMapping("/rest/noAuth")
 public class ApplicationControllerWithoutAuth {
 
     @GetMapping("/getMsg")
